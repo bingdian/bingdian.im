@@ -1,0 +1,18 @@
+baseURL = "https://bingdian.im/"
+languageCode = "zh-cn"
+title = "On The Way"
+theme = "lite"
+disqusShortname = "bingdian-im"
+
+[params]
+  description = "爱折腾，爱生活..."
+  mainSections = ["posts"]
+
+[Menus]
+  main = [
+      {Name = "PROJECTS", URL = "/projects/"},
+      {Name = "ABOUT", URL = "/about/index.html"}
+  ]
+
+[markup.goldmark.renderer]
+	unsafe= true

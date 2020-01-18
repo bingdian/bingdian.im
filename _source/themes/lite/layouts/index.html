@@ -1,0 +1,25 @@
+{{ define "main" -}}
+
+<section class="item">
+  {{ $year := "" -}}
+
+  {{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+
+  {{ range $pages -}}
+    {{ $postYear := .Date.Format "2006" }}
+    {{ if ne $year $postYear }}
+      {{- if ne $year ""}}
+        </ul>
+      {{- end}}
+      {{- $year = $postYear }}
+      <h2>{{$year}}</h2>
+      <ul>
+    {{- end }}
+      <li>
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+        <time class="updated" datetime="{{ .Date.Format "2006-01-02T15:04:05Z0700" }}">{{ .Date.Format "2006-01-02" }}</time>
+      </li>
+  {{- end }}
+      </ul>
+</section>
+{{- end }}

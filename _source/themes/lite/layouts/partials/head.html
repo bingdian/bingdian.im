@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"{{with .Site.LanguageCode}} xml:lang="{{.}}" lang="{{.}}"{{end}}>
+<head>
+  <link href="https://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  {{ hugo.Generator }}
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-title" content="{{ .Site.Title }}" />
+  <meta name="application-name" content="{{ .Site.Title }}" />
+
+  {{ if .IsHome -}}
+  <title>{{ .Site.Title }}</title>
+  {{- else -}}
+  <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
+  {{- end }}
+  <meta name="description" content="{{if .IsHome}}{{ $.Site.Params.description }}{{else}}{{.Description}}{{end}}" />
+
+  <link type="text/css" rel="stylesheet" href="{{ .Site.BaseURL }}css/main.css">
+  <link rel="apple-touch-icon" href="/images/touch-icon.png" />
+  <link rel="shortcut icon" href="/images/favicon.ico">
+
+  {{ range .AlternativeOutputFormats -}}
+    {{ printf `<link href="%s" rel="%s" type="%s" title="%s" />` .Permalink .Rel .MediaType.Type $.Site.Title | safeHTML }}
+  {{ end -}}
+
+  {{ partial "hook_head_end.html" . }}
+</head>
