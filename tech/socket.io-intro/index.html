@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn" lang="zh-cn">
+<head>
+  <link href="https://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.62.2" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-title" content="On The Way" />
+  <meta name="application-name" content="On The Way" />
+
+  <title>socket.io 介绍 &middot; On The Way</title>
+  <meta name="description" content="" />
+
+  <link type="text/css" rel="stylesheet" href="https://bingdian.im/css/main.css">
+  <link rel="apple-touch-icon" href="/images/touch-icon.png" />
+  <link rel="shortcut icon" href="/images/favicon.ico">
+
+  
+</head>
+<body class=" ">
+  <div id="wrapper">
+    <header id="header" class="clear">
+  <h1>socket.io 介绍</h1>
+</header>
+
+<nav id="nav">
+  <a href="https://bingdian.im/">Home</a>
+  <a href="/about/index.html"> ABOUT </a><a href="/projects/"> PROJECTS </a>
+</nav>
+
+    <main id="main" class="content container">
+      <article>
+
+  <div class="post-date">- Posted on <time class="updated" datetime="2020-01-23T17:22:49&#43;0800">2020-01-23</time></div>
+
+  <div class="entry-content"}>
+    <h2 id="一什么是-socketio">一、什么是 socket.io</h2>
+<p>socket.io 是一个基于事件驱动的为实时应用提供跨平台通信的库。socket.io 抹平了不同浏览器之间的差异，可以根据浏览器自动选择合适双向通信协议。</p>
+<h3 id="11-socketio-特点">1.1 socket.io 特点</h3>
+<ol>
+<li>可靠性 - 即使在以下场景中也可以建立连接：（它依赖在Engine.IO，它首先建立一个长轮询连接，然后尝试升级到更好的传输通道，这些传输在另外一边被tested，比如websocket。）
+<ul>
+<li>代理和负载均衡器</li>
+<li>个人防火墙和防病毒软件</li>
+</ul>
+</li>
+<li>支持自动重连
+<ul>
+<li>除非主动断开连接，否则，断开客户端会无限重试连接，直到服务器再次可以可用。</li>
+</ul>
+</li>
+<li>断连检测
+<ul>
+<li>底层(Engine.IO)实现实现心跳机制，允许服务器和客户端保持连接，直到一方停止响应。(TODO)</li>
+</ul>
+</li>
+<li>支持二进制
+<ul>
+<li>浏览器中的 ArrayBuffer(数组缓存) 和 Blob(二进制大文件)</li>
+<li>Node.js 中的 ArrayBuffer 和 Buffer 缓存</li>
+</ul>
+</li>
+<li>支持多路复用
+<ul>
+<li>Socket.io 允许创建多个 Namespaces (命名空间)，这些命名空间将作为单独的消息通信通道，也可以共享相同的底层连接。</li>
+</ul>
+</li>
+<li>支持房间
+<ul>
+<li>在每个 namespace 中，可以建立频道( Room )，客户端可以可以加入或者离开任意频道。也可以广播消息到任何指定的房间，可以发送消息到所有加入房间的客户端。</li>
+</ul>
+</li>
+</ol>
+<h3 id="12-示例">1.2 示例</h3>
+<h4 id="服务端">服务端</h4>
+<pre><code>const server = require('http').createServer();
+
+const io = require('socket.io')(server, {
+  path: '/test',
+  serveClient: false,
+  // below are engine.IO options
+  pingInterval: 10000,
+  pingTimeout: 5000,
+  cookie: false
+});
+
+server.listen(3000);
+</code></pre>
+<h4 id="客户端">客户端</h4>
+<pre><code>import io from 'socket.io-client';
+
+const socket = io('http://localhost');
+
+socket.on('connect', () =&gt; {
+  console.log(socket.disconnected); // false
+});
+
+socket.on('disconnect', () =&gt; {
+  socket.open();
+});
+
+socket.emit('hello', 'world');
+
+socket.on('myevent', () =&gt; {
+});
+</code></pre>
+<h2 id="二socketio-应用场景">二、socket.io 应用场景</h2>
+<ol>
+<li>在线聊天</li>
+<li>实时数据通信 &amp; 实时消息通道</li>
+<li>文档协同编辑</li>
+<li>&hellip;</li>
+</ol>
+<h2 id="三socketio-架构介绍">三、socket.io 架构介绍</h2>
+<p>socket.io 主要由以下几个部分构成：</p>
+<ul>
+<li><a href="https://github.com/socketio/socket.io">socket.io</a></li>
+<li><a href="https://github.com/socketio/socket.io-client">socket.io-client</a></li>
+<li><a href="https://github.com/socketio/socket.io-parser">socket.io-parser</a></li>
+<li><a href="https://github.com/socketio/socket.io-adapter">socket.io-adapter</a></li>
+<li><a href="https://github.com/socketio/socket.io-redis">socket.io-redis</a></li>
+<li><a href="https://github.com/socketio/engine.io">engine.io</a></li>
+<li><a href="https://github.com/socketio/engine.io-client">engine.io-client</a></li>
+<li><a href="https://github.com/socketio/engine.io-parser">engine.io-parser</a></li>
+</ul>
+<p>下图是各个部分的依赖关系图：</p>
+<p><img src="/image/tech/socket.io-dependencies.jpg" alt="socket.io 依赖关系图" width="1024" /></p>
+<h3 id="31-engineio">3.1 engine.io</h3>
+<p>engine.io 是为 socket.io 提供跨浏览器/跨设备的双向通信的底层库，所有建立连接、消息通信都是由这一层来做。engine.io 使用了 Websocket 和 XHR 方式封装了一套协议，在低版本的浏览器中，不支持Websocket，降级为长轮询(polling)方式。</p>
+<p>engine.io 支持的连接方式：</p>
+<ul>
+<li>polling: XHR / JSONP polling</li>
+<li>websocket</li>
+</ul>
+<h3 id="32-engineio-client">3.2 engine.io-client</h3>
+<p>engine.io-client 是 socket.io-client 的核心，所有的连接建立、传输方式选择，都在这一层来做。</p>
+<h3 id="33-engineio-parser">3.3 engine.io-parser</h3>
+<p>engine.io-parser 是 <a href="https://github.com/socketio/engine.io-protocol">engine.io-protocol</a> 的实现，为 engine.io packet 提供编码 &amp; 解码功能。</p>
+<p>当我们要将消息内容传到前端，或者将消息从前端传到服务端口，都会先使用 engine.io-parser 将消息内容 <code>encode</code>，然后收到的一方进行 <code>decode</code>。( 使用 encode 目的主要是为了减小传输成本 )</p>
+<h3 id="34-socketio-parser">3.4 socket.io-parser</h3>
+<p>socket.io-parser 功能和 engine.io-parser 功能类似，是 <a href="https://github.com/socketio/socket.io-parser"> socket.io-protocol</a> 的实现，为 socket.io packet 提供编码解码的功能。</p>
+<h3 id="35-socketio-adapter">3.5 socket.io-adapter</h3>
+<p>默认的 socket.io 内存适配器，可以进行扩展。</p>
+<h3 id="36-socketio">3.6 socket.io</h3>
+<p>socket.io 服务端。基于 engine.io 的上层框架，带来了一些语法上的优势，它还引入了两个新的概念，即 root 和 namespace。</p>
+<h3 id="37-socketio-client">3.7 socket.io-client</h3>
+<p>socket.io 的客户端，它依赖于 engine.io-client ，用来处理客户端连接和收发消息处理。</p>
+<h2 id="四相关文档">四、相关文档</h2>
+<ul>
+<li><a href="https://socket.io/docs/">官方文档</a></li>
+<li><a href="https://eggjs.org/zh-cn/tutorials/socketio.html">egg-socket.io</a></li>
+</ul>
+
+  </div>
+
+  <div class="entry-meta"></div>
+</article>
+
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "bingdian-im" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </main>
+    
+    <footer id="footer">
+  <p class="copyright"><span class="software">Powered by <a href="https://gohugo.io/" target="_blank">HUGO</a> 0.62.2, &copy; 2020. All rights reserved. </span></p>
+</footer>
+</div>
+  </body>
+</html>

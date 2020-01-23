@@ -3,12 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://bingdian.im/read/how-to-read-a-book/</loc>
-    <lastmod>2020-01-22T16:11:13+08:00</lastmod>
+    <loc>https://bingdian.im/</loc>
+    <lastmod>2020-01-23T17:22:49+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bingdian.im/</loc>
+    <loc>https://bingdian.im/tech/socket.io-intro/</loc>
+    <lastmod>2020-01-23T17:22:49+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bingdian.im/tech/</loc>
+    <lastmod>2020-01-23T17:22:49+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bingdian.im/read/how-to-read-a-book/</loc>
     <lastmod>2020-01-22T16:11:13+08:00</lastmod>
   </url>
   
