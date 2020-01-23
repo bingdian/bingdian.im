@@ -139,6 +139,7 @@ h3 {
 }
 
 h4, h5, h6 {
+    margin-bottom: 0.5em;
     font-size: 1em;
 }
 
@@ -635,7 +636,7 @@ table tr th :last-child, table tr td :last-child {
 }
 
 .entry-content img {
-    width: auto;
+    /*width: auto;*/
     max-width: 100%;
 }
 .post-date {

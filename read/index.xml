@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>On The Way</title>
-    <link>https://bingdian.im/</link>
-    <description>Recent content on On The Way</description>
+    <title>Reads on On The Way</title>
+    <link>https://bingdian.im/read/</link>
+    <description>Recent content in Reads on On The Way</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 22 Jan 2020 16:11:13 +0800</lastBuildDate>
     
-	<atom:link href="https://bingdian.im/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://bingdian.im/read/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -28,35 +28,6 @@
 二、阅读的层次 在本书中，将阅读分为了四个层次：
  第一层次的阅读 - 基础阅读（elementary reading）这个层次通常是在小学时完成的 第二层次的阅读 - 检视阅读（inspectional reading），用一种方式形容这个层次的阅读，就是在一定的时间内，抓出一本书的重点 - 通常是很短，而且总是很短，很难掌握一本书所有的重点。这个层次的目标是从表面去观察这本书，学习到书的表象所教给你的一切。 第三层次的阅读 - 分析阅读（analytical reading），如果说检视阅读是在有限的时间内最好也最完整的阅读，那么分析阅读是在无限的时间里，最好最完整的阅读。如果目标只是获取资讯或消遣，就完全没有必要用到分析阅读 第四层次的阅读 - 主题阅读（syntopical reading）  2.1 阅读的第一个层次：基础阅读 这个层次通常是在小学时完成的，现在大家都广泛的接受了这样的观念：在儿童具备成熟的阅读能力之前，至少会经历大约四个孑然不同的阶段：
  第一阶段（相当于学前教育阶段）阅读准备阶段，这一阶段从从出生开始，直到六七岁为至。  身体方面的准备：良好的视力&amp;amp;听力 智力方面准备：具备起码的认知能力，以便孩子能吸收与记住一个字与组成这个字的字母 语言上的准备：口齿清晰，能说出一些正确的句子 个人准备：包括与其他孩童一起学习的能力，保持注意力，服从等 重要要记得：一个孩子如果还没准备好就要教他阅读，他很可能会不喜欢这样的学习经验，以后的学校教育甚至成人阶段都会受到影响。   第二个阶段（相当于一年级学生典型学习经验）  孩子会阅读一些简单的读物，如看图识字。介绍一些基本的技巧，如字句的使用、词句的含义、字句的发音，这个阶段结束时，小学生应该能自己阅读简单的书，而且很喜欢阅读了。 这个阶段有些附带的事件值得观察，孩子在发展过程中的某个时刻，面对书上的一连串符号会觉得毫无意义，但过不多多久，他确明白了这些符号的意义。他知道这是说，「猫坐在帽子上」。懂得发现一些符号的意义，是人类所表现出最惊人的聪明技巧，大多数人七岁以前就表现出这样的智能了。   第三阶段（相当于四年级读写能力）  快速建立字汇的能力，所用的方法是从上下文所提供的线索，「揭发」不熟悉的字眼。孩子在这个阶段学会不同目标、不同领域的阅读方法。像科学、社会学、语言艺术等等。他们学习除了在学校之外，阅读还是一项可以自己来做的事。   第四阶段（相当于小学或初中毕业）  精炼与增进前面在学校所学的技巧。最重要的是，学生开始消化他的阅读经验 &amp;ndash; 从一本书的一个观点转化到另一个观点，在同一个主题上，对不同的作者提出的观点作比较。这是阅读的成熟阶段，应该是一个青少年就该达到的境界，也是终其一生都该持续下去的。    只有当一个孩子精通了基础阅读的四个阶段，才是他准备好往更高层次阅读迈进的时候。</description>
-    </item>
-    
-    <item>
-      <title>About me</title>
-      <link>https://bingdian.im/about/</link>
-      <pubDate>Sat, 18 Jan 2020 15:17:39 +0800</pubDate>
-      
-      <guid>https://bingdian.im/about/</guid>
-      <description>冰点 前端工程师，@广州，这里是我记录东西的地方，欢迎一起交流。
- Email：imbingdian#gmail.com Weibo：@icer Github：http://github.com/bingdian
- </description>
-    </item>
-    
-    <item>
-      <title>Hello, 2020</title>
-      <link>https://bingdian.im/posts/hello-2020/</link>
-      <pubDate>Sat, 18 Jan 2020 15:17:39 +0800</pubDate>
-      
-      <guid>https://bingdian.im/posts/hello-2020/</guid>
-      <description>hello, 2020</description>
-    </item>
-    
-    <item>
-      <title>Projects</title>
-      <link>https://bingdian.im/projects/</link>
-      <pubDate>Sat, 18 Jan 2020 15:17:39 +0800</pubDate>
-      
-      <guid>https://bingdian.im/projects/</guid>
-      <description></description>
     </item>
     
   </channel>

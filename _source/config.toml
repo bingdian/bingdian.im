@@ -6,7 +6,7 @@ disqusShortname = "bingdian-im"
 
 [params]
   description = "爱折腾，爱生活..."
-  mainSections = ["posts"]
+  mainSections = ["posts", "read", "tech"]
 
 [Menus]
   main = [
