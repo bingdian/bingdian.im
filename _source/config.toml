@@ -16,3 +16,13 @@ disqusShortname = "bingdian-im"
 
 [markup.goldmark.renderer]
 	unsafe= true
+
+[outputFormats]
+  [outputFormats.MANIFEST]
+    name = "manifest"
+    baseName = "manifest"
+    mediaType = "application/json"
+    rel = "manifest"
+
+[outputs]
+    home  = [ "HTML",  "MANIFEST", "SITEMAP"]

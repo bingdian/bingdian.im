@@ -1,0 +1,16 @@
+{
+  "name": "{{ .Site.Title }}",
+  "short_name": "{{ .Site.Title }}",
+  "icons": [
+    {
+      "src": "/images/touch-icon.png",
+      "sizes": "36x36",
+      "type": "image/png",
+      "density": "0.75"
+    }
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/?source=standalone"
+}
