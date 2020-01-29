@@ -3,6 +3,7 @@ languageCode = "zh-cn"
 title = "On The Way"
 theme = "lite"
 disqusShortname = "bingdian-im"
+googleAnalytics = "UA-1245097-20"
 
 [params]
   description = "爱折腾，爱生活..."
