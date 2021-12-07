@@ -1,58 +1,36 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
-    <loc>https://bingdian.im/</loc>
+    <loc>https://bingdian.io/</loc>
     <lastmod>2020-01-23T17:22:49+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bingdian.im/tech/socket.io-intro/</loc>
+  </url><url>
+    <loc>https://bingdian.io/tech/socket.io-intro/</loc>
     <lastmod>2020-01-23T17:22:49+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bingdian.im/tech/</loc>
+  </url><url>
+    <loc>https://bingdian.io/tech/</loc>
     <lastmod>2020-01-23T17:22:49+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bingdian.im/read/how-to-read-a-book/</loc>
+  </url><url>
+    <loc>https://bingdian.io/read/how-to-read-a-book/</loc>
     <lastmod>2020-01-22T16:11:13+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bingdian.im/read/</loc>
+  </url><url>
+    <loc>https://bingdian.io/read/</loc>
     <lastmod>2020-01-22T16:11:13+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bingdian.im/about/</loc>
+  </url><url>
+    <loc>https://bingdian.io/about/</loc>
     <lastmod>2020-01-18T15:17:39+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bingdian.im/posts/hello-2020/</loc>
+  </url><url>
+    <loc>https://bingdian.io/posts/hello-2020/</loc>
     <lastmod>2020-01-18T15:17:39+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bingdian.im/posts/</loc>
+  </url><url>
+    <loc>https://bingdian.io/posts/</loc>
     <lastmod>2020-01-18T15:17:39+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bingdian.im/projects/</loc>
+  </url><url>
+    <loc>https://bingdian.io/projects/</loc>
     <lastmod>2020-01-18T15:17:39+08:00</lastmod>
+  </url><url>
+    <loc>https://bingdian.io/categories/</loc>
+  </url><url>
+    <loc>https://bingdian.io/tags/</loc>
   </url>
-  
-  <url>
-    <loc>https://bingdian.im/categories/</loc>
-  </url>
-  
-  <url>
-    <loc>https://bingdian.im/tags/</loc>
-  </url>
-  
 </urlset>
