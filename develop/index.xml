@@ -6,7 +6,23 @@
     <description>Recent content in Develops on On The Way</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 23 Jan 2020 17:22:49 +0800</lastBuildDate><atom:link href="https://bingdian.io/develop/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 08 Mar 2022 21:49:56 +0800</lastBuildDate><atom:link href="https://bingdian.io/develop/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Web 安全详解</title>
+      <link>https://bingdian.io/develop/web-security/</link>
+      <pubDate>Tue, 08 Mar 2022 21:49:56 +0800</pubDate>
+      
+      <guid>https://bingdian.io/develop/web-security/</guid>
+      <description>一、XSS 1.1 什么时 XSS XSS (Cross-site scripting) 是一种网站应用程序的安全漏洞，是代码注入的一种，攻击者可以利用漏洞在网站上注入恶意代码。
+当被攻击者访问被攻击网站时就会自动运行这些恶意代码，攻击者可以突破网站的访问权限，以当前页面的访问用户的身份，执行前端可执行的操作或窃取用户信息，对当前用户造成影响。
+&amp;lt;img src=&amp;quot;http://domain/not_exist.png&amp;quot; onerror=&amp;quot;alert(&#39;evil&#39;)&amp;quot;&amp;gt;  1.1.1 XSS 类型 反射型 XSS (Reflected XSS) 反射型的 XSS 攻击，主要是由于服务端接收到客户端的不安全输入，在客户端触发执行从而发起 Web 攻击。
+反射型 XSS (Reflected XSS) 基于存储的 XSS 攻击，是通过提交带有恶意脚本的内容存储在服务器上，当其他人看到这些内容时发起 Web 攻击。一般提交的内容都是通过一些富文本编辑器编辑的，很容易插入危险代码。
+1.2 XSS 的危害 1.2.1 窃取 cookie 攻击者通过注入代码发送 http 请求窃取用户 cookie
+&amp;lt;script&amp;gt; const adr = &#39;../evil?cakemonster=&#39; + escape(document.cookie); &amp;lt;/script&amp;gt;  1.2.2 执行未授权操作 利用注入 Javascript 脚本，以用户身份执行未授权操作。例如，在一些有 XSS 漏洞的社交网站，进行加好友、发私信等操作。
+1.2.3 按键记录 注入代码，记录用户键盘输入信息，并通过 http 请求发送到攻击者指定服务器。
+1.2.4 DDos 攻击 在一些访问量大网站上 XSS 可以攻击一些小型网站，实现 DDoS 攻击效果。</description>
+    </item>
+    
     <item>
       <title>socket.io 介绍</title>
       <link>https://bingdian.io/develop/socket.io-intro/</link>
