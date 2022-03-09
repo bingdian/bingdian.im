@@ -2,7 +2,7 @@
 title: "Web 安全系列 - XSS 篇"
 date: 2022-03-08T21:49:56+08:00
 draft: true
-tags:[ "Web安全", "XSS"]
+tags: ["Web安全","XSS"]
 ---
 
 ## 一、 什么是 XSS

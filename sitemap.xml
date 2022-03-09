@@ -2,38 +2,54 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/develop/</loc>
+    <loc>https://bingdian.io/develop/</loc>
     <lastmod>2022-03-08T21:49:56+08:00</lastmod>
   </url><url>
-    <loc>/</loc>
+    <loc>https://bingdian.io/</loc>
     <lastmod>2022-03-08T21:49:56+08:00</lastmod>
   </url><url>
-    <loc>/develop/web-security/</loc>
+    <loc>https://bingdian.io/tags/</loc>
     <lastmod>2022-03-08T21:49:56+08:00</lastmod>
   </url><url>
-    <loc>/develop/socket.io-intro/</loc>
+    <loc>https://bingdian.io/develop/web-security/</loc>
+    <lastmod>2022-03-08T21:49:56+08:00</lastmod>
+  </url><url>
+    <loc>https://bingdian.io/tags/web%E5%AE%89%E5%85%A8/</loc>
+    <lastmod>2022-03-08T21:49:56+08:00</lastmod>
+  </url><url>
+    <loc>https://bingdian.io/tags/xss/</loc>
+    <lastmod>2022-03-08T21:49:56+08:00</lastmod>
+  </url><url>
+    <loc>https://bingdian.io/tags/node.js/</loc>
     <lastmod>2020-01-23T17:22:49+08:00</lastmod>
   </url><url>
-    <loc>/read/how-to-read-a-book/</loc>
+    <loc>https://bingdian.io/develop/socket.io-intro/</loc>
+    <lastmod>2020-01-23T17:22:49+08:00</lastmod>
+  </url><url>
+    <loc>https://bingdian.io/tags/websocket/</loc>
+    <lastmod>2020-01-23T17:22:49+08:00</lastmod>
+  </url><url>
+    <loc>https://bingdian.io/read/how-to-read-a-book/</loc>
     <lastmod>2020-01-22T16:11:13+08:00</lastmod>
   </url><url>
-    <loc>/read/</loc>
+    <loc>https://bingdian.io/read/</loc>
     <lastmod>2020-01-22T16:11:13+08:00</lastmod>
   </url><url>
-    <loc>/about/</loc>
+    <loc>https://bingdian.io/tags/%E9%98%85%E8%AF%BB/</loc>
+    <lastmod>2020-01-22T16:11:13+08:00</lastmod>
+  </url><url>
+    <loc>https://bingdian.io/about/</loc>
     <lastmod>2020-01-18T15:17:39+08:00</lastmod>
   </url><url>
-    <loc>/posts/hello-2020/</loc>
+    <loc>https://bingdian.io/posts/hello-2020/</loc>
     <lastmod>2020-01-18T15:17:39+08:00</lastmod>
   </url><url>
-    <loc>/posts/</loc>
+    <loc>https://bingdian.io/posts/</loc>
     <lastmod>2020-01-18T15:17:39+08:00</lastmod>
   </url><url>
-    <loc>/projects/</loc>
+    <loc>https://bingdian.io/projects/</loc>
     <lastmod>2020-01-18T15:17:39+08:00</lastmod>
   </url><url>
-    <loc>/categories/</loc>
-  </url><url>
-    <loc>/tags/</loc>
+    <loc>https://bingdian.io/categories/</loc>
   </url>
 </urlset>

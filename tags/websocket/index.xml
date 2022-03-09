@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>websocket on On The Way</title>
+    <link>https://bingdian.io/tags/websocket/</link>
+    <description>Recent content in websocket on On The Way</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 23 Jan 2020 17:22:49 +0800</lastBuildDate><atom:link href="https://bingdian.io/tags/websocket/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>socket.io 介绍</title>
+      <link>https://bingdian.io/develop/socket.io-intro/</link>
+      <pubDate>Thu, 23 Jan 2020 17:22:49 +0800</pubDate>
+      
+      <guid>https://bingdian.io/develop/socket.io-intro/</guid>
+      <description>一、什么是 socket.io socket.io 是一个基于事件驱动的为实时应用提供跨平台通信的库。socket.io 抹平了不同浏览器之间的差异，可以根据浏览器自动选择合适双向通信协议。
+1.1 socket.io 特点  可靠性 - 即使在以下场景中也可以建立连接：（它依赖在Engine.IO，它首先建立一个长轮询连接，然后尝试升级到更好的传输通道，这些传输在另外一边被tested，比如websocket。）  代理和负载均衡器 个人防火墙和防病毒软件   支持自动重连  除非主动断开连接，否则，断开客户端会无限重试连接，直到服务器再次可以可用。   断连检测  底层(Engine.IO)实现实现心跳机制，允许服务器和客户端保持连接，直到一方停止响应。(TODO)   支持二进制  浏览器中的 ArrayBuffer(数组缓存) 和 Blob(二进制大文件) Node.js 中的 ArrayBuffer 和 Buffer 缓存   支持多路复用  Socket.io 允许创建多个 Namespaces (命名空间)，这些命名空间将作为单独的消息通信通道，也可以共享相同的底层连接。   支持房间  在每个 namespace 中，可以建立频道( Room )，客户端可以可以加入或者离开任意频道。也可以广播消息到任何指定的房间，可以发送消息到所有加入房间的客户端。    1.2 示例 服务端 const server = require(&#39;http&#39;).createServer(); const io = require(&#39;socket.io&#39;)(server, { path: &#39;/test&#39;, serveClient: false, // below are engine.</description>
+    </item>
+    
+  </channel>
+</rss>

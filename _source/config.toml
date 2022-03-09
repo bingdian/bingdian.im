@@ -11,8 +11,9 @@ googleAnalytics = "UA-1245097-20"
 
 [Menus]
   main = [
-      {Name = "PROJECTS", URL = "/projects/"},
-      {Name = "ABOUT", URL = "/about/index.html"}
+      {Name = "TAGS", URL = "/tags/index.html", Weight = 1},
+      {Name = "PROJECTS", URL = "/projects/", Weight = 2},
+      {Name = "ABOUT", URL = "/about/index.html", Weight = 3}
   ]
 
 [markup.goldmark.renderer]
