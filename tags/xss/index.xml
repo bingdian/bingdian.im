@@ -9,10 +9,10 @@
     <lastBuildDate>Tue, 08 Mar 2022 21:49:56 +0800</lastBuildDate><atom:link href="https://bingdian.io/tags/xss/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Web 安全系列 - XSS 篇</title>
-      <link>https://bingdian.io/develop/web-security/</link>
+      <link>https://bingdian.io/develop/web-security-xss/</link>
       <pubDate>Tue, 08 Mar 2022 21:49:56 +0800</pubDate>
       
-      <guid>https://bingdian.io/develop/web-security/</guid>
+      <guid>https://bingdian.io/develop/web-security-xss/</guid>
       <description>一、 什么是 XSS XSS (Cross-site scripting) 是一种网站应用程序的安全漏洞，是代码注入的一种，攻击者可以利用漏洞在网站上注入恶意代码。
 当被攻击者访问被攻击的网站时就会自动运行这些恶意代码，攻击者可以突破网站的访问权限，以当前页面的访问用†户的身份，执行前端可执行的操作或窃取用户信息，对当前用户造成影响。
 &amp;lt;img src=&amp;quot;http://domain/not_exist.png&amp;quot; onerror=&amp;quot;alert(&#39;evil&#39;)&amp;quot;&amp;gt;  二、XSS 类型 反射型 XSS (Reflected XSS) 反射型的 XSS 攻击，主要是由于服务端接收到客户端的不安全输入，在客户端触发执行从而发起 Web 攻击。
