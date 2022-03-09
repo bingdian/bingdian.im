@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on On The Way</title>
-    <link>https://bingdian.io/posts/</link>
+    <link>/posts/</link>
     <description>Recent content in Posts on On The Way</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 18 Jan 2020 15:17:39 +0800</lastBuildDate><atom:link href="https://bingdian.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 18 Jan 2020 15:17:39 +0800</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hello, 2020</title>
-      <link>https://bingdian.io/posts/hello-2020/</link>
+      <link>/posts/hello-2020/</link>
       <pubDate>Sat, 18 Jan 2020 15:17:39 +0800</pubDate>
       
-      <guid>https://bingdian.io/posts/hello-2020/</guid>
+      <guid>/posts/hello-2020/</guid>
       <description>hello, 2020</description>
     </item>
     
