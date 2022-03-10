@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CSRF on On The Way</title>
+    <link>https://bingdian.io/tags/csrf/</link>
+    <description>Recent content in CSRF on On The Way</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 10 Mar 2022 00:22:54 +0800</lastBuildDate><atom:link href="https://bingdian.io/tags/csrf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Web 安全系列 - CSRF 篇</title>
+      <link>https://bingdian.io/develop/web-security-csrf/</link>
+      <pubDate>Thu, 10 Mar 2022 00:22:54 +0800</pubDate>
+      
+      <guid>https://bingdian.io/develop/web-security-csrf/</guid>
+      <description>一、什么是 CSRF CSRF (Cross-Site Request Forgery，跨站请求伪造) 是一种 Web 安全漏洞，也被称为 one-click attack 或者 session riding。
+攻击原理： http 是无状态的，服务端通过客户端 cookie 对当前请求鉴权。CSRF 就是利用的是网站对用户客户端的信任进行攻击。 对服务器来说这个请求是完全合法的，但是却完成了攻击者所期望的一个操作，比如以受害者身份发邮件、发消息，甚至于购买商品、虚拟货币转账等。
+二、常见 CSRF 攻击 GET 类型 CSRF 如果有接口可以直接通过 GET 请可以进行敏感操作，攻击者可以直接通过页面加载图片的方式进行攻击，浏览器会自动发送 https://bank.com/withdraw?amount=1000&amp;amp;for=hacker，从达到攻击效果。
+&amp;lt;img src=&amp;quot;https://bank.com/withdraw?amount=1000&amp;amp;for=hacker&amp;quot; /&amp;gt; POST 类型 CSRF 这种类型攻击通常是使用表单的方式进行的：
+ &amp;lt;form action=&amp;quot;http://bank.example/withdraw&amp;quot; method=POST&amp;gt; &amp;lt;input type=&amp;quot;hidden&amp;quot; name=&amp;quot;account&amp;quot; value=&amp;quot;xiaoming&amp;quot; /&amp;gt; &amp;lt;input type=&amp;quot;hidden&amp;quot; name=&amp;quot;amount&amp;quot; value=&amp;quot;1000&amp;quot; /&amp;gt; &amp;lt;input type=&amp;quot;hidden&amp;quot; name=&amp;quot;for&amp;quot; value=&amp;quot;hacker&amp;quot; /&amp;gt; &amp;lt;/form&amp;gt; &amp;lt;script&amp;gt; document.forms[0].submit(); &amp;lt;/script&amp;gt; 访问页面后，表单会自动提交，从而达成攻击效果。
+三 、CSRF 防范 referer 通过服务端校验请求 referer，阻止非信任域访问。referer属性是可以修改的，所以在服务器端校验 referer 属性并不可靠。</description>
+    </item>
+    
+  </channel>
+</rss>

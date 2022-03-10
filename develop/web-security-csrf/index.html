@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn" lang="zh-cn">
+<head>
+  <link href="https://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.92.1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-title" content="On The Way" />
+  <meta name="application-name" content="On The Way" />
+
+  <title>Web 安全系列 - CSRF 篇 &middot; On The Way</title>
+  <meta name="description" content="" />
+
+  <link type="text/css" rel="stylesheet" href="https://bingdian.io/css/main.css">
+  <link type="text/css" rel="stylesheet" href="https://bingdian.io/css/heti.min.css">
+  <link rel="apple-touch-icon" href="/images/touch-icon.png" />
+  <link rel="shortcut icon" href="/images/favicon.ico">
+
+  
+</head>
+<body class=" ">
+  <div id="wrapper">
+    <header id="header" class="clear">
+  <h1>Web 安全系列 - CSRF 篇</h1>
+</header>
+
+<nav id="nav">
+  <a href="https://bingdian.io/">Home</a>
+  <a href="/tags/index.html"> TAGS </a><a href="https://github.com/bingdian"> PROJECTS </a><a href="/about/index.html"> ABOUT </a>
+</nav>
+
+    <main id="main" class="content container">
+      <article>
+
+  <div class="post-date">- Posted on <time class="updated" datetime="2022-03-10T00:22:54&#43;0800">2022-03-10</time></div>
+
+  <div class="entry-content heti"}>
+    <h2 id="一什么是-csrf">一、什么是 CSRF</h2>
+<p>CSRF (Cross-Site Request Forgery，跨站请求伪造) 是一种 Web 安全漏洞，也被称为 one-click attack 或者 session riding。</p>
+<p>攻击原理： http 是无状态的，服务端通过客户端 cookie 对当前请求鉴权。CSRF 就是利用的是网站对用户客户端的信任进行攻击。
+对服务器来说这个请求是完全合法的，但是却完成了攻击者所期望的一个操作，比如以受害者身份发邮件、发消息，甚至于购买商品、虚拟货币转账等。</p>
+<img style="padding: 10px 0;" src="/image/develop/web-security/web-security-csrf.png" alt="csrf" width="1024" />
+<h2 id="二常见-csrf-攻击">二、常见 CSRF 攻击</h2>
+<h3 id="get-类型-csrf">GET 类型 CSRF</h3>
+<p>如果有接口可以直接通过 GET 请可以进行敏感操作，攻击者可以直接通过页面加载图片的方式进行攻击，浏览器会自动发送 <code>https://bank.com/withdraw?amount=1000&amp;for=hacker</code>，从达到攻击效果。</p>
+<pre tabindex="0"><code>&lt;img src=&quot;https://bank.com/withdraw?amount=1000&amp;for=hacker&quot; /&gt;
+</code></pre><h3 id="post-类型-csrf">POST 类型 CSRF</h3>
+<p>这种类型攻击通常是使用表单的方式进行的：</p>
+<pre tabindex="0"><code> &lt;form action=&quot;http://bank.example/withdraw&quot; method=POST&gt;
+    &lt;input type=&quot;hidden&quot; name=&quot;account&quot; value=&quot;xiaoming&quot; /&gt;
+    &lt;input type=&quot;hidden&quot; name=&quot;amount&quot; value=&quot;1000&quot; /&gt;
+    &lt;input type=&quot;hidden&quot; name=&quot;for&quot; value=&quot;hacker&quot; /&gt;
+&lt;/form&gt;
+&lt;script&gt; document.forms[0].submit(); &lt;/script&gt; 
+</code></pre><p>访问页面后，表单会自动提交，从而达成攻击效果。</p>
+<h2 id="三-csrf-防范">三 、CSRF 防范</h2>
+<h3 id="referer">referer</h3>
+<p>通过服务端校验请求 referer，阻止非信任域访问。referer属性是可以修改的，所以在服务器端校验 referer 属性并不可靠。</p>
+<h3 id="csrf-token">CSRF Token</h3>
+<ol>
+<li>生成 CSRF token - 用户访问页面，服务端生成一个 CSRF Token 发送给浏览器
+<ul>
+<li>Synchronizer Tokens：通过响应页面时将 token 渲染到页面上，在 form 表单提交的时候通过隐藏域提交上来。</li>
+<li>Double Cookie Defense：将 token 设置在 Cookie 中，在提交（POST、PUT、PATCH、DELETE 等）请求时提交 Cookie，并通过 header 或者 body 带上 Cookie 中的 token，服务端进行对比校验。</li>
+</ul>
+</li>
+<li>浏览器请求时携带 CSRF Token</li>
+<li>服务器收到请求后，验证 CSRF token 是否合法，如果不合法拒绝请求</li>
+</ol>
+<h2 id="参考文档">参考文档</h2>
+<ul>
+<li><a href="https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html">https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html</a></li>
+<li><a href="https://www.freebuf.com/articles/web/224446.html">https://www.freebuf.com/articles/web/224446.html</a></li>
+<li><a href="https://www.davidairey.com/google-gmail-security-hijack/">(https://www.davidairey.com/google-gmail-security-hijack/</a></li>
+</ul>
+
+  </div>
+
+  <div class="entry-meta"></div>
+</article>
+
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "bingdian-im" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </main>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-1245097-20', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    <footer id="footer">
+  <p class="copyright"><span class="software">Powered by <a href="https://gohugo.io/" target="_blank">HUGO</a> 0.92.1, &copy; 2022. All rights reserved. </span></p>
+</footer>
+</div>
+  </body>
+</html>
