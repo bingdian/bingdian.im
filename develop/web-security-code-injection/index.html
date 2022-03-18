@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn" lang="zh-cn">
+<head>
+  <link href="https://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.92.1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-title" content="On The Way" />
+  <meta name="application-name" content="On The Way" />
+
+  <title>Web 安全系列 - 代码注入篇 &middot; On The Way</title>
+  <meta name="description" content="" />
+
+  <link type="text/css" rel="stylesheet" href="https://bingdian.io/css/main.css">
+  <link type="text/css" rel="stylesheet" href="https://bingdian.io/css/heti.min.css">
+  <link rel="apple-touch-icon" href="/images/touch-icon.png" />
+  <link rel="shortcut icon" href="/images/favicon.ico">
+
+  
+</head>
+<body class=" ">
+  <div id="wrapper">
+    <header id="header" class="clear">
+  <h1>Web 安全系列 - 代码注入篇</h1>
+</header>
+
+<nav id="nav">
+  <a href="https://bingdian.io/">Home</a>
+  <a href="/tags/index.html"> TAGS </a><a href="https://github.com/bingdian"> PROJECTS </a><a href="/about/index.html"> ABOUT </a>
+</nav>
+
+    <main id="main" class="content container">
+      <article>
+
+  <div class="post-date">- Posted on <time class="updated" datetime="2022-03-18T21:33:49&#43;0800">2022-03-18</time></div>
+
+  <div class="entry-content heti"}>
+    <h2 id="一介绍">一、介绍</h2>
+<p>代码注入攻击指的是攻击者在应用程序中注入源代码，以改变程序的运行，这类攻击通常是由于缺乏对用户输入/输出数据验证和过滤导致的。</p>
+<h2 id="二-xss">二、 XSS</h2>
+<p>XSS 是代码注入的一种，详见 <a href="https://bingdian.io/develop/web-security-xss/">Web 安全系列 - XSS 篇</a></p>
+<h2 id="三sql-注入">三、SQL 注入</h2>
+<h3 id="什么是-sql-注入">什么是 SQL 注入</h3>
+<p>SQL 注入攻击（SQL injection），是发生于数据库的安全漏洞，是 Web 开发中最常见的一种安全漏洞。</p>
+<p>程序由于没有对用户输入数据的合法性进行验证和过滤，攻击者通过向服务器提交精心构造的恶意代码，程序将攻击者的输入作为查询语句的一部分执行，从而实现攻击。如增加、删除、查询、修改数据等及操作。</p>
+<h3 id="sql-注入危害">SQL 注入危害</h3>
+<ul>
+<li>敏感数据泄露</li>
+<li>数据被恶意修改或删除</li>
+<li>在网页加入恶意链接、恶意代码以及 XSS 等</li>
+</ul>
+<h3 id="sql-注入示例">SQL 注入示例</h3>
+<pre><code>// 网站登录代码:
+&quot;SELECT * FROM users WHERE (username = '&quot; + userName + &quot;') and (password = '&quot;+ passWord +&quot;');&quot;
+
+// 恶意输入
+username = &quot;1' OR '1'='1&quot;;
+password = &quot;1' OR '1'='1&quot;;
+
+// 实际上运行结果
+&quot;SELECT * FROM users WHERE (username = '1' OR '1'='1') and (password = '1' OR '1'='1');&quot;
+&quot;SELECT * FROM users;&quot;
+</code></pre>
+<h3 id="sql-注入防范">SQL 注入防范</h3>
+<p>防范核心原则：</p>
+<pre><code>一切用户输入皆不可信
+一切用户输入皆不可信
+一切用户输入皆不可信
+</code></pre>
+<ol>
+<li>使用 <a href="https://zh.wikipedia.org/wiki/%E5%8F%83%E6%95%B8%E5%8C%96%E6%9F%A5%E8%A9%A2">参数化查询（Parameterized Query）</a> - 参数化的语句使用参数而不是将用户输入变量嵌入到SQL语句中，即不要直接拼接SQL语句。</li>
+<li>Web 应用的数据库的操作权限最小化，减少注入攻击对数据库的危害</li>
+<li>检查输入的数据是否具有所期望的数据格式，对进入数据库的特殊字符（ <code>'</code> <code>&quot;</code> <code>\</code> <code>&lt;</code> <code>&gt;</code> <code>&amp;</code> <code>*</code> <code>;</code> 等）进行转义处理，或编码转换。</li>
+<li>避免打印 SQL 错误信息，防止攻击者利用误信息进行 SQL 注入</li>
+</ol>
+<h2 id="四动态代码注入">四、动态代码注入</h2>
+<h3 id="动态代码注入介绍">动态代码注入介绍</h3>
+<p>Web 应用允许用户输入在服务器端执行，从而导致的安全问题（等于给用户开放了服务器的完全控制权限）。如：</p>
+<pre><code>// Node.js
+eval(evilString);
+new Function(evilString);
+
+// Python
+eval(evilString);
+exec(evilString);
+
+// Ruby
+eval 'evilString';
+
+// PHP
+eval(evilString);
+</code></pre>
+<h3 id="动态代码注入危害">动态代码注入危害</h3>
+<ul>
+<li>获取服务器上敏感内容</li>
+<li>在服务器上运行恶意代码</li>
+<li>获取服务器的控制权</li>
+</ul>
+<h3 id="动态代码注入防范">动态代码注入防范</h3>
+<p>需要代码动态执行的地方，需要严格控制外部输入数据，确保外部输入为处理过的字符串。</p>
+<h2 id="参考文档">参考文档</h2>
+<ul>
+<li><a href="https://owasp.org/www-community/attacks/Code_Injection">Code Injection</a></li>
+</ul>
+
+  </div>
+
+  <div class="entry-meta"></div>
+</article>
+
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "bingdian-im" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </main>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-1245097-20', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    <footer id="footer">
+  <p class="copyright"><span class="software">Powered by <a href="https://gohugo.io/" target="_blank">HUGO</a> 0.92.1, &copy; 2022. All rights reserved. </span></p>
+</footer>
+</div>
+  </body>
+</html>

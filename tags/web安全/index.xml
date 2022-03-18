@@ -6,7 +6,20 @@
     <description>Recent content in Web安全 on On The Way</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 10 Mar 2022 00:22:54 +0800</lastBuildDate><atom:link href="https://bingdian.io/tags/web%E5%AE%89%E5%85%A8/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 18 Mar 2022 21:33:49 +0800</lastBuildDate><atom:link href="https://bingdian.io/tags/web%E5%AE%89%E5%85%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Web 安全系列 - 代码注入篇</title>
+      <link>https://bingdian.io/develop/web-security-code-injection/</link>
+      <pubDate>Fri, 18 Mar 2022 21:33:49 +0800</pubDate>
+      
+      <guid>https://bingdian.io/develop/web-security-code-injection/</guid>
+      <description>一、介绍 代码注入攻击指的是攻击者在应用程序中注入源代码，以改变程序的运行，这类攻击通常是由于缺乏对用户输入/输出数据验证和过滤导致的。
+二、 XSS XSS 是代码注入的一种，详见 Web 安全系列 - XSS 篇
+三、SQL 注入 什么是 SQL 注入 SQL 注入攻击（SQL injection），是发生于数据库的安全漏洞，是 Web 开发中最常见的一种安全漏洞。
+程序由于没有对用户输入数据的合法性进行验证和过滤，攻击者通过向服务器提交精心构造的恶意代码，程序将攻击者的输入作为查询语句的一部分执行，从而实现攻击。如增加、删除、查询、修改数据等及操作。
+SQL 注入危害  敏感数据泄露 数据被恶意修改或删除 在网页加入恶意链接、恶意代码以及 XSS 等  SQL 注入示例 // 网站登录代码: &amp;quot;SELECT * FROM users WHERE (username = &#39;&amp;quot; + userName + &amp;quot;&#39;) and (password = &#39;&amp;quot;+ passWord +&amp;quot;&#39;);&amp;quot; // 恶意输入 username = &amp;quot;1&#39; OR &#39;1&#39;=&#39;1&amp;quot;; password = &amp;quot;1&#39; OR &#39;1&#39;=&#39;1&amp;quot;; // 实际上运行结果 &amp;quot;SELECT * FROM users WHERE (username = &#39;1&#39; OR &#39;1&#39;=&#39;1&#39;) and (password = &#39;1&#39; OR &#39;1&#39;=&#39;1&#39;);&amp;quot; &amp;quot;SELECT * FROM users;&amp;quot;  SQL 注入防范 防范核心原则：</description>
+    </item>
+    
     <item>
       <title>Web 安全系列 - CSRF 篇</title>
       <link>https://bingdian.io/develop/web-security-csrf/</link>
