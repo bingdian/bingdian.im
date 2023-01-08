@@ -60,7 +60,9 @@ audio:not([controls]) {
 html {
     background: #fff;
     color: #333;
-    font: 16px/1.5 "Georgia", 'Helvetica Neue', Arial, 'Liberation Sans', FreeSans, 'Chinese Quote', '-apple-system', BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', "Wenquanyi Micro Hei", "WenQuanYi Micro Hei Mono", "WenQuanYi Zen Hei", "WenQuanYi Zen Hei", sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+    /*font: 18px/1.5 "Georgia", 'Helvetica Neue', Arial, 'Liberation Sans', FreeSans, 'Chinese Quote', '-apple-system', BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', "Wenquanyi Micro Hei", "WenQuanYi Micro Hei Mono", "WenQuanYi Zen Hei", "WenQuanYi Zen Hei", sans-serif;*/
     -webkit-text-size-adjust: none;
     word-wrap: break-word;
 }
@@ -547,19 +549,20 @@ table tr th :last-child, table tr td :last-child {
     width: 780px;
     float: right;
     padding: 2em 0 0.5em 0;
-    border-bottom: 1px #ccc solid;
+    border-bottom: 1px #e4e4e4 solid;
 }
 
 /*
  * nav
  */
 #nav {
-    width: 140px;
+    width: 160px;
     padding-top: 90px;
     padding-bottom: 5em;
     text-transform: uppercase;
     float: left;
-    font-size: 1em;
+    font-size: 20px;
+    font-family: "Georgia", 'Helvetica Neue', Arial, 'Liberation Sans', FreeSans, 'Chinese Quote', '-apple-system', BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', "Wenquanyi Micro Hei", "WenQuanYi Micro Hei Mono", "WenQuanYi Zen Hei", "WenQuanYi Zen Hei", sans-serif;
 }
 #nav a {
     display: block;
@@ -672,7 +675,7 @@ table tr th :last-child, table tr td :last-child {
     width: 960px;
     clear: both;
     margin: 0 auto;
-    border-top: 1px #ccc solid;
+    border-top: 1px #e4e4e4 solid;
     color: #999;
     text-align: center;
     font-size: 14px;
@@ -749,6 +752,10 @@ table tr th :last-child, table tr td :last-child {
     #main ul li a {
         margin-right: 10px;
     }
+}
+
+.heti {
+    max-width: 100% !important;
 }
 
 
