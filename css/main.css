@@ -552,6 +552,11 @@ table tr th :last-child, table tr td :last-child {
     border-bottom: 1px #e4e4e4 solid;
 }
 
+#header p {
+    font-size: 16px;
+    color: #999;
+}
+
 /*
  * nav
  */
@@ -559,7 +564,7 @@ table tr th :last-child, table tr td :last-child {
     width: 160px;
     padding-top: 90px;
     padding-bottom: 5em;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     float: left;
     font-size: 20px;
     font-family: "Georgia", 'Helvetica Neue', Arial, 'Liberation Sans', FreeSans, 'Chinese Quote', '-apple-system', BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', "Wenquanyi Micro Hei", "WenQuanYi Micro Hei Mono", "WenQuanYi Zen Hei", "WenQuanYi Zen Hei", sans-serif;
