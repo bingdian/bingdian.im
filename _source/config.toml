@@ -12,7 +12,7 @@ googleAnalytics = "UA-1245097-20"
 [Menus]
   main = [
       {Name = "TAGS", URL = "/tags/index.html", Weight = 1},
-      {Name = "PROJECTS", URL = "https://github.com/bingdian", Weight = 2},
+      {Name = "GITHUB", URL = "https://github.com/bingdian", Weight = 2},
       {Name = "ABOUT", URL = "/about/index.html", Weight = 3}
   ]
 
