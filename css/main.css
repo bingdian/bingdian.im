@@ -553,8 +553,8 @@ table tr th :last-child, table tr td :last-child {
 }
 
 #header p {
-    font-size: 16px;
-    color: #999;
+    font-size: 18px;
+    color: #555;
 }
 
 /*
@@ -686,6 +686,9 @@ table tr th :last-child, table tr td :last-child {
     font-size: 14px;
 }
 
+.heti {
+    max-width: 100% !important;
+}
 
 /* ==========================================================================
    Responsive
@@ -743,6 +746,9 @@ table tr th :last-child, table tr td :last-child {
     #header h1 {
         padding-left: 0.5em;
     }
+    #header p {
+        padding-left: 1em;
+    }
 
     #main {
         padding-left: 1em;
@@ -759,9 +765,6 @@ table tr th :last-child, table tr td :last-child {
     }
 }
 
-.heti {
-    max-width: 100% !important;
-}
 
 
 /* phone  */
