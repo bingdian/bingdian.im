@@ -34,7 +34,7 @@ tags: ["Web安全"]
 
 攻击示例：
 
-<img style="padding: 10px 0;" src="/image/develop/web-security/web-security-401-phishing.png" alt="401 钓鱼" width="480" />
+<img style="padding: 10px 0;" src="/images/develop/web-security/web-security-401-phishing.png" alt="401 钓鱼" width="480" />
 
 ### 防范方式
 

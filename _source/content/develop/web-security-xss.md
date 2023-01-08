@@ -21,7 +21,7 @@ XSS (Cross-site scripting) 是一种网站应用程序的安全漏洞，是代�
 
 下图是常见的反射型 XSS 攻击过程图：
 
-<img style="padding: 10px 0;" src="/image/develop/web-security/web-security-reflected-XSS.png" alt="反射型 XSS" width="1024" />
+<img style="padding: 10px 0;" src="/images/develop/web-security/web-security-reflected-XSS.png" alt="反射型 XSS" width="1024" />
 
 ### 存储型 XSS (Stored XSS)
 
@@ -29,7 +29,7 @@ XSS (Cross-site scripting) 是一种网站应用程序的安全漏洞，是代�
 
 以下是常见的存储型 XSS 攻击过程图：
 
-<img style="padding: 10px 0;" src="/image/develop/web-security/web-security-stored-XSS.png" alt="存储型 XSS" width="1024" />
+<img style="padding: 10px 0;" src="/images/develop/web-security/web-security-stored-XSS.png" alt="存储型 XSS" width="1024" />
 
 ## 三、 XSS 的危害
 

@@ -12,7 +12,7 @@ CSRF (Cross-Site Request Forgery，跨站请求伪造) 是一种 Web 安全漏�
 攻击原理： http 是无状态的，服务端通过客户端 cookie 对当前请求鉴权。CSRF 就是利用的是网站对用户客户端的信任进行攻击。
 对服务器来说这个请求是完全合法的，但是却完成了攻击者所期望的一个操作，比如以受害者身份发邮件、发消息，甚至于购买商品、虚拟货币转账等。
 
-<img style="padding: 10px 0;" src="/image/develop/web-security/web-security-csrf.png" alt="csrf" width="1024" />
+<img style="padding: 10px 0;" src="/images/develop/web-security/web-security-csrf.png" alt="csrf" width="1024" />
 
 ## 二、常见 CSRF 攻击
 

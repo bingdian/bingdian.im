@@ -86,7 +86,7 @@ socket.io 主要由以下几个部分构成：
 
 下图是各个部分的依赖关系图：
 
-<img src="/image/tech/socket.io-dependencies.jpg" alt="socket.io 依赖关系图" width="1024" />
+<img src="/images/tech/socket.io-dependencies.jpg" alt="socket.io 依赖关系图" width="1024" />
 
 ### 3.1 engine.io
 

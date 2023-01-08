@@ -9,7 +9,7 @@ tags: ["阅读"]
 
 > 这是一本为阅读的人，或是想要成为阅读的人而写的书。说的更具体 一点，这本是为那些想把读书的主要目的当作是增进理解能力的人而写。
 
-<img src="/image/read/how-to-read-a-book.png" alt="如何阅读一本书" width="400" />
+<img src="/images/read/how-to-read-a-book.png" alt="如何阅读一本书" width="400" />
 
 ## 一、阅读的艺术
 
