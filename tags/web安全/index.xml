@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Web安全 on On The Way</title>
-    <link>https://bingdian.io/tags/web%E5%AE%89%E5%85%A8/</link>
+    <link>https://bingdian.im/tags/web%E5%AE%89%E5%85%A8/</link>
     <description>Recent content in Web安全 on On The Way</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 21 Mar 2022 21:57:00 +0800</lastBuildDate><atom:link href="https://bingdian.io/tags/web%E5%AE%89%E5%85%A8/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 21 Mar 2022 21:57:00 +0800</lastBuildDate><atom:link href="https://bingdian.im/tags/web%E5%AE%89%E5%85%A8/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Web 安全系列 - 钓鱼攻击篇</title>
-      <link>https://bingdian.io/develop/web-security-phishing/</link>
+      <link>https://bingdian.im/develop/web-security-phishing/</link>
       <pubDate>Mon, 21 Mar 2022 21:57:00 +0800</pubDate>
       
-      <guid>https://bingdian.io/develop/web-security-phishing/</guid>
+      <guid>https://bingdian.im/develop/web-security-phishing/</guid>
       <description>钓鱼攻击有有多种方式，本篇主要讲 Web 安全中常见的 url 钓鱼 iframe 钓鱼、401 钓鱼。
 一、 url 钓鱼 用户在可信网站上点击链接，由于服务端未对传入的跳转 url 进行检查校验，可能导致可恶意构造任意一个恶意地址，诱导用户跳转到恶意网站。 由于是从可信的站点跳转出去的，用户会比较信任，通过转到恶意网站欺骗用户输入用户名和密码盗取用户信息，或欺骗用户进行金钱交易。
 防范方式 跳转域名使用域名白名单，阻止非白名单域名跳转，或者跳转到非白名单域名时给用户提示。
 二、 iframe 钓鱼 通过内嵌 iframe 到被攻击的网页中，攻击者可以引导用户去点击iframe 指向的危险网站，甚至遮盖，影响网站的正常功能，劫持用户的点击操作。
 防范方式 使用 X-Frame-Options 响应头
- DENY - 页面不允许在 frame 中展示 SAMEORIGIN - 页面可以在相同域名页面的 frame 中展示 ALLOW-FROM https://example.com/ - 页面可以在指定来源的 frame 中展示  浏览器支持情况详见 https://caniuse.com/?search=X-Frame-Options
+DENY - 页面不允许在 frame 中展示 SAMEORIGIN - 页面可以在相同域名页面的 frame 中展示 ALLOW-FROM https://example.com/ - 页面可以在指定来源的 frame 中展示 浏览器支持情况详见 https://caniuse.com/?search=X-Frame-Options
 三、 401 钓鱼 如果允许用户向网页里插入未经验证的外链图片，就有可能出现钓鱼风险。攻击者在被攻击页面插入需要使用 Basic authentication 认证的资源。当用户访问被攻击页面时，页面会弹出输入框让用户输入帐号及密码，当用户输入之后，帐号及密码就存储到了黑客的服务器中。
 攻击示例：
 防范方式 对用户插入页面的 url 资源进行白名单校验。</description>
@@ -26,45 +26,46 @@
     
     <item>
       <title>Web 安全系列 - 代码注入篇</title>
-      <link>https://bingdian.io/develop/web-security-code-injection/</link>
+      <link>https://bingdian.im/develop/web-security-code-injection/</link>
       <pubDate>Fri, 18 Mar 2022 21:33:49 +0800</pubDate>
       
-      <guid>https://bingdian.io/develop/web-security-code-injection/</guid>
+      <guid>https://bingdian.im/develop/web-security-code-injection/</guid>
       <description>一、介绍 代码注入攻击指的是攻击者在应用程序中注入源代码，以改变程序的运行，这类攻击通常是由于缺乏对用户输入/输出数据验证和过滤导致的。
 二、 XSS XSS 是代码注入的一种，详见 Web 安全系列 - XSS 篇
 三、SQL 注入 什么是 SQL 注入 SQL 注入攻击（SQL injection），是发生于数据库的安全漏洞，是 Web 开发中最常见的一种安全漏洞。
 程序由于没有对用户输入数据的合法性进行验证和过滤，攻击者通过向服务器提交精心构造的恶意代码，程序将攻击者的输入作为查询语句的一部分执行，从而实现攻击。如增加、删除、查询、修改数据等及操作。
-SQL 注入危害  敏感数据泄露 数据被恶意修改或删除 在网页加入恶意链接、恶意代码以及 XSS 等  SQL 注入示例 // 网站登录代码: &amp;quot;SELECT * FROM users WHERE (username = &#39;&amp;quot; + userName + &amp;quot;&#39;) and (password = &#39;&amp;quot;+ passWord +&amp;quot;&#39;);&amp;quot; // 恶意输入 username = &amp;quot;1&#39; OR &#39;1&#39;=&#39;1&amp;quot;; password = &amp;quot;1&#39; OR &#39;1&#39;=&#39;1&amp;quot;; // 实际上运行结果 &amp;quot;SELECT * FROM users WHERE (username = &#39;1&#39; OR &#39;1&#39;=&#39;1&#39;) and (password = &#39;1&#39; OR &#39;1&#39;=&#39;1&#39;);&amp;quot; &amp;quot;SELECT * FROM users;&amp;quot;  SQL 注入防范 防范核心原则：</description>
+SQL 注入危害 敏感数据泄露 数据被恶意修改或删除 在网页加入恶意链接、恶意代码以及 XSS 等 SQL 注入示例 // 网站登录代码: &amp;quot;SELECT * FROM users WHERE (username = &#39;&amp;quot; + userName + &amp;quot;&#39;) and (password = &#39;&amp;quot;+ passWord +&amp;quot;&#39;);&amp;quot; // 恶意输入 username = &amp;quot;1&#39; OR &#39;1&#39;=&#39;1&amp;quot;; password = &amp;quot;1&#39; OR &#39;1&#39;=&#39;1&amp;quot;; // 实际上运行结果 &amp;quot;SELECT * FROM users WHERE (username = &#39;1&#39; OR &#39;1&#39;=&#39;1&#39;) and (password = &#39;1&#39; OR &#39;1&#39;=&#39;1&#39;);&amp;quot; &amp;quot;SELECT * FROM users;&amp;quot; SQL 注入防范 防范核心原则：</description>
     </item>
     
     <item>
       <title>Web 安全系列 - CSRF 篇</title>
-      <link>https://bingdian.io/develop/web-security-csrf/</link>
+      <link>https://bingdian.im/develop/web-security-csrf/</link>
       <pubDate>Thu, 10 Mar 2022 00:22:54 +0800</pubDate>
       
-      <guid>https://bingdian.io/develop/web-security-csrf/</guid>
+      <guid>https://bingdian.im/develop/web-security-csrf/</guid>
       <description>一、什么是 CSRF CSRF (Cross-Site Request Forgery，跨站请求伪造) 是一种 Web 安全漏洞，也被称为 one-click attack 或者 session riding。
 攻击原理： http 是无状态的，服务端通过客户端 cookie 对当前请求鉴权。CSRF 就是利用的是网站对用户客户端的信任进行攻击。 对服务器来说这个请求是完全合法的，但是却完成了攻击者所期望的一个操作，比如以受害者身份发邮件、发消息，甚至于购买商品、虚拟货币转账等。
 二、常见 CSRF 攻击 GET 类型 CSRF 如果有接口可以直接通过 GET 请可以进行敏感操作，攻击者可以直接通过页面加载图片的方式进行攻击，浏览器会自动发送 https://bank.com/withdraw?amount=1000&amp;amp;for=hacker，从达到攻击效果。
-&amp;lt;img src=&amp;quot;https://bank.com/withdraw?amount=1000&amp;amp;for=hacker&amp;quot; /&amp;gt; POST 类型 CSRF 这种类型攻击通常是使用表单的方式进行的：
- &amp;lt;form action=&amp;quot;http://bank.example/withdraw&amp;quot; method=POST&amp;gt; &amp;lt;input type=&amp;quot;hidden&amp;quot; name=&amp;quot;account&amp;quot; value=&amp;quot;xiaoming&amp;quot; /&amp;gt; &amp;lt;input type=&amp;quot;hidden&amp;quot; name=&amp;quot;amount&amp;quot; value=&amp;quot;1000&amp;quot; /&amp;gt; &amp;lt;input type=&amp;quot;hidden&amp;quot; name=&amp;quot;for&amp;quot; value=&amp;quot;hacker&amp;quot; /&amp;gt; &amp;lt;/form&amp;gt; &amp;lt;script&amp;gt; document.forms[0].submit(); &amp;lt;/script&amp;gt; 访问页面后，表单会自动提交，从而达成攻击效果。
-三 、CSRF 防范 referer 通过服务端校验请求 referer，阻止非信任域访问。referer属性是可以修改的，所以在服务器端校验 referer 属性并不可靠。</description>
+&amp;lt;img src=&amp;#34;https://bank.com/withdraw?amount=1000&amp;amp;for=hacker&amp;#34; /&amp;gt; POST 类型 CSRF 这种类型攻击通常是使用表单的方式进行的：
+&amp;lt;form action=&amp;#34;http://bank.example/withdraw&amp;#34; method=POST&amp;gt; &amp;lt;input type=&amp;#34;hidden&amp;#34; name=&amp;#34;account&amp;#34; value=&amp;#34;xiaoming&amp;#34; /&amp;gt; &amp;lt;input type=&amp;#34;hidden&amp;#34; name=&amp;#34;amount&amp;#34; value=&amp;#34;1000&amp;#34; /&amp;gt; &amp;lt;input type=&amp;#34;hidden&amp;#34; name=&amp;#34;for&amp;#34; value=&amp;#34;hacker&amp;#34; /&amp;gt; &amp;lt;/form&amp;gt; &amp;lt;script&amp;gt; document.forms[0].submit(); &amp;lt;/script&amp;gt; 访问页面后，表单会自动提交，从而达成攻击效果。
+三 、CSRF 防范 referer 通过服务端校验请求 referer，阻止非信任域访问。referer属性是可以修改的，所以在服务器端校验 referer 属性并不可靠。
+CSRF Token 生成 CSRF token - 用户访问页面，服务端生成一个 CSRF Token 发送给浏览器 Synchronizer Tokens：通过响应页面时将 token 渲染到页面上，在 form 表单提交的时候通过隐藏域提交上来。 Double Cookie Defense：将 token 设置在 Cookie 中，在提交（POST、PUT、PATCH、DELETE 等）请求时提交 Cookie，并通过 header 或者 body 带上 Cookie 中的 token，服务端进行对比校验。 浏览器请求时携带 CSRF Token 服务器收到请求后，验证 CSRF token 是否合法，如果不合法拒绝请求 参考文档 https://cheatsheetseries.</description>
     </item>
     
     <item>
       <title>Web 安全系列 - XSS 篇</title>
-      <link>https://bingdian.io/develop/web-security-xss/</link>
+      <link>https://bingdian.im/develop/web-security-xss/</link>
       <pubDate>Tue, 08 Mar 2022 21:49:56 +0800</pubDate>
       
-      <guid>https://bingdian.io/develop/web-security-xss/</guid>
+      <guid>https://bingdian.im/develop/web-security-xss/</guid>
       <description>一、 什么是 XSS XSS (Cross-site scripting) 是一种网站应用程序的安全漏洞，是代码注入的一种，攻击者可以利用漏洞在网站上注入恶意代码。
 当被攻击者访问被攻击的网站时就会自动运行这些恶意代码，攻击者可以突破网站的访问权限，以当前页面的访问用户的身份，执行前端可执行的操作或窃取用户信息，对当前用户造成影响。
-&amp;lt;img src=&amp;quot;http://domain/not_exist.png&amp;quot; onerror=&amp;quot;alert(&#39;evil&#39;)&amp;quot;&amp;gt;  二、XSS 类型 反射型 XSS (Reflected XSS) 反射型的 XSS 攻击，主要是由于服务端接收到客户端的不安全输入，在客户端触发执行从而发起 Web 攻击。
+&amp;lt;img src=&amp;quot;http://domain/not_exist.png&amp;quot; onerror=&amp;quot;alert(&#39;evil&#39;)&amp;quot;&amp;gt; 二、XSS 类型 反射型 XSS (Reflected XSS) 反射型的 XSS 攻击，主要是由于服务端接收到客户端的不安全输入，在客户端触发执行从而发起 Web 攻击。
 下图是常见的反射型 XSS 攻击过程图：
 存储型 XSS (Stored XSS) 基于存储的 XSS 攻击，是通过提交带有恶意脚本的内容存储在服务器上，当其他人看到这些内容时发起 Web 攻击。一般提交的内容都是通过一些富文本编辑器编辑的，很容易插入危险代码。
 以下是常见的存储型 XSS 攻击过程图：
 三、 XSS 的危害 窃取 cookie 攻击者通过注入代码发送 http 请求窃取用户 cookie
-&amp;lt;script&amp;gt; const adr = &#39;../evil?cakemonster=&#39; + escape(document.cookie); &amp;lt;/script&amp;gt;  执行未授权操作 利用注入 Javascript 脚本，以用户身份执行未授权操作。例如，在一些有 XSS 漏洞的社交网站，进行加好友、发私信等操作。
+&amp;lt;script&amp;gt; const adr = &#39;../evil?cakemonster=&#39; + escape(document.cookie); &amp;lt;/script&amp;gt; 执行未授权操作 利用注入 Javascript 脚本，以用户身份执行未授权操作。例如，在一些有 XSS 漏洞的社交网站，进行加好友、发私信等操作。
 按键记录 注入代码，记录用户键盘输入信息，并通过 http 请求发送到攻击者指定服务器。
 DDos 攻击 在一些访问量大网站上 XSS 可以攻击一些小型网站，实现 DDoS 攻击效果。</description>
     </item>

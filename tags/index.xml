@@ -2,62 +2,62 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on On The Way</title>
-    <link>https://bingdian.io/tags/</link>
+    <link>https://bingdian.im/tags/</link>
     <description>Recent content in Tags on On The Way</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 21 Mar 2022 21:57:00 +0800</lastBuildDate><atom:link href="https://bingdian.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 21 Mar 2022 21:57:00 +0800</lastBuildDate><atom:link href="https://bingdian.im/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Web安全</title>
-      <link>https://bingdian.io/tags/web%E5%AE%89%E5%85%A8/</link>
+      <link>https://bingdian.im/tags/web%E5%AE%89%E5%85%A8/</link>
       <pubDate>Mon, 21 Mar 2022 21:57:00 +0800</pubDate>
       
-      <guid>https://bingdian.io/tags/web%E5%AE%89%E5%85%A8/</guid>
+      <guid>https://bingdian.im/tags/web%E5%AE%89%E5%85%A8/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CSRF</title>
-      <link>https://bingdian.io/tags/csrf/</link>
+      <link>https://bingdian.im/tags/csrf/</link>
       <pubDate>Fri, 18 Mar 2022 21:33:49 +0800</pubDate>
       
-      <guid>https://bingdian.io/tags/csrf/</guid>
+      <guid>https://bingdian.im/tags/csrf/</guid>
       <description></description>
     </item>
     
     <item>
       <title>XSS</title>
-      <link>https://bingdian.io/tags/xss/</link>
+      <link>https://bingdian.im/tags/xss/</link>
       <pubDate>Tue, 08 Mar 2022 21:49:56 +0800</pubDate>
       
-      <guid>https://bingdian.io/tags/xss/</guid>
+      <guid>https://bingdian.im/tags/xss/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Node.js</title>
-      <link>https://bingdian.io/tags/node.js/</link>
+      <link>https://bingdian.im/tags/node.js/</link>
       <pubDate>Thu, 23 Jan 2020 17:22:49 +0800</pubDate>
       
-      <guid>https://bingdian.io/tags/node.js/</guid>
+      <guid>https://bingdian.im/tags/node.js/</guid>
       <description></description>
     </item>
     
     <item>
       <title>websocket</title>
-      <link>https://bingdian.io/tags/websocket/</link>
+      <link>https://bingdian.im/tags/websocket/</link>
       <pubDate>Thu, 23 Jan 2020 17:22:49 +0800</pubDate>
       
-      <guid>https://bingdian.io/tags/websocket/</guid>
+      <guid>https://bingdian.im/tags/websocket/</guid>
       <description></description>
     </item>
     
     <item>
       <title>阅读</title>
-      <link>https://bingdian.io/tags/%E9%98%85%E8%AF%BB/</link>
+      <link>https://bingdian.im/tags/%E9%98%85%E8%AF%BB/</link>
       <pubDate>Wed, 22 Jan 2020 16:11:13 +0800</pubDate>
       
-      <guid>https://bingdian.io/tags/%E9%98%85%E8%AF%BB/</guid>
+      <guid>https://bingdian.im/tags/%E9%98%85%E8%AF%BB/</guid>
       <description></description>
     </item>
     
