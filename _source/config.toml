@@ -7,7 +7,7 @@ googleAnalytics = "UA-1245097-20"
 
 [params]
   description = "爱折腾，爱生活..."
-  mainSections = ["posts", "read", "develop"]
+  mainSections = ["posts", "read", "develop", "photography"]
 
 [Menus]
   main = [
